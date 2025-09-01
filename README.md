@@ -15,6 +15,7 @@ Este repositório contém as duas aplicações separadas em:
 - Node.js (https://nodejs.org)  
 - Java 17+ (https://adoptium.net)  
 - Git (para clonar o projeto)
+- Banco de dados MySQL (ou outro compatível)
 
 ---
 
@@ -64,6 +65,32 @@ cd todolist
 
 ```powershell
 .\mvnw spring-boot:run
+```
+
+---
+
+## 🗄️ Banco de Dados (Database)
+
+O backend Spring Boot precisa de um banco de dados configurado com as seguintes informações:
+
+- **Banco:** MySQL (ou outro que você usa)
+- **Nome da database:** `todo`
+- **Usuário:** seu_usuario
+- **Senha:** sua_senha
+
+### Configuração no arquivo `application.properties`:
+
+```properties
+spring.datasource.url=jdbc:mysql://localhost:3306/todo
+spring.datasource.username=seu_usuario
+spring.datasource.password=sua_senha
+spring.jpa.hibernate.ddl-auto=update
+```
+
+### Exemplo de como criar a database no MySQL:
+
+```sql
+CREATE DATABASE todo;
 ```
 
 ---
